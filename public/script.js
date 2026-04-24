@@ -28,19 +28,25 @@ async function loadProducts() {
     try {
         const response = await fetch(`${API_URL}/products`);
         const data = await response.json();
-     if (data && data.products) {
-    products = data.products;
-    displayProducts(products);
-} else {
-    console.error("Invalid API response:", data);
-    productsGrid.innerHTML = '<div class="loading-spinner">API Error: No products received</div>';
-}
+
+        console.log("🔥 RAW API RESPONSE:", data);
+
+        console.log("🔥 PRODUCTS TYPE:", typeof data.products);
+        console.log("🔥 PRODUCTS ARRAY:", data.products);
+
+        if (!Array.isArray(data.products)) {
+            throw new Error("Products is not an array");
+        }
+
+        products = data.products;
+        displayProducts(products);
+
     } catch (error) {
-        console.error('Error loading products:', error);
-        productsGrid.innerHTML = '<div class="loading-spinner">Failed to load products. Please refresh.</div>';
+        console.error('❌ Error loading products:', error);
+        productsGrid.innerHTML =
+            '<div class="loading-spinner">API ERROR - Check Console</div>';
     }
 }
-
 // Display Products
 function displayProducts(productsToShow) {
     if (!productsToShow || productsToShow.length === 0) {
