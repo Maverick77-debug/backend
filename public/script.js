@@ -28,8 +28,13 @@ async function loadProducts() {
     try {
         const response = await fetch(`${API_URL}/products`);
         const data = await response.json();
-        products = data.products;
-        displayProducts(products);
+     if (data && data.products) {
+    products = data.products;
+    displayProducts(products);
+} else {
+    console.error("Invalid API response:", data);
+    productsGrid.innerHTML = '<div class="loading-spinner">API Error: No products received</div>';
+}
     } catch (error) {
         console.error('Error loading products:', error);
         productsGrid.innerHTML = '<div class="loading-spinner">Failed to load products. Please refresh.</div>';
