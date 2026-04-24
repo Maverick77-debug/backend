@@ -1,1 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HoopsHub - Premium NBA Gear</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-basketball"></i>
+                <span>Hoops<span class="highlight">Hub</span></span>
+            </div>
+            <div class="nav-links">
+                <a href="#" class="active">Home</a>
+                <a href="#">Shop</a>
+                <a href="#">Collections</a>
+                <a href="#">About</a>
+            </div>
+            <div class="nav-icons">
+                <button class="icon-btn search-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+                <button class="icon-btn cart-btn" id="cartBtn">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+            </div>
+        </div>
+    </nav>
 
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fas fa-fire"></i> Limited Edition Drops
+            </div>
+            <h1 class="hero-title">
+                Gear Up Like<br>
+                <span class="gradient-text">The Legends</span>
+            </h1>
+            <p class="hero-subtitle">
+                Authentic NBA jerseys, exclusive merchandise, and premium basketball gear. 
+                Shop the collection that champions wear.
+            </p>
+            <div class="hero-buttons">
+                <button class="btn-primary" id="shopNowBtn">
+                    Shop Now <i class="fas fa-arrow-right"></i>
+                </button>
+                <button class="btn-secondary">
+                    Watch Trailer <i class="fas fa-play"></i>
+                </button>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">50K+</span>
+                    <span class="stat-label">Happy Customers</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">200+</span>
+                    <span class="stat-label">Products</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">24/7</span>
+                    <span class="stat-label">Support</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="floating-card card-1">
+                <i class="fas fa-trophy"></i>
+                <span>Official Merch</span>
+            </div>
+            <div class="floating-card card-2">
+                <i class="fas fa-shipping-fast"></i>
+                <span>Free Shipping</span>
+            </div>
+            <div class="floating-card card-3">
+                <i class="fas fa-shield-alt"></i>
+                <span>Authentic</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Shop by Category</span>
+                <h2 class="section-title">Find Your <span class="gradient-text">Style</span></h2>
+            </div>
+            <div class="categories-grid">
+                <div class="category-card" data-category="jerseys">
+                    <div class="category-icon">
+                        <i class="fas fa-tshirt"></i>
+                    </div>
+                    <h3>Jerseys</h3>
+                    <p>Authentic player editions</p>
+                </div>
+                <div class="category-card" data-category="shorts">
+                    <div class="category-icon">
+                        <i class="fas fa-basketball"></i>
+                    </div>
+                    <h3>Shorts</h3>
+                    <p>Elite performance gear</p>
+                </div>
+                <div class="category-card" data-category="accessories">
+                    <div class="category-icon">
+                        <i class="fas fa-hat-cowboy"></i>
+                    </div>
+                    <h3>Accessories</h3>
+                    <p>Complete your look</p>
+                </div>
+                <div class="category-card" data-category="limited edition">
+                    <div class="category-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3>Limited Edition</h3>
+                    <p>Exclusive drops</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="productsSection">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Featured Products</span>
+                <h2 class="section-title">Best <span class="gradient-text">Sellers</span></h2>
+            </div>
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be loaded here -->
+                <div class="loading-spinner">
+                    <i class="fas fa-spinner fa-spin"></i>
+                    Loading amazing products...
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>
+                <i class="fas fa-shopping-bag"></i>
+                Your Cart
+            </h3>
+            <button class="close-cart" id="closeCart">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <div class="empty-cart">
+                <i class="fas fa-shopping-cart"></i>
+                <p>Your cart is empty</p>
+                <button class="btn-primary" id="continueShopping">Continue Shopping</button>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-summary">
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span id="cartSubtotal">$0.00</span>
+                </div>
+                <div class="summary-row">
+                    <span>Shipping</span>
+                    <span>Free</span>
+                </div>
+                <div class="summary-row">
+                    <span>Tax (10%)</span>
+                    <span id="cartTax">$0.00</span>
+                </div>
+                <div class="summary-row total">
+                    <span>Total</span>
+                    <span id="cartTotal">$0.00</span>
+                </div>
+            </div>
+            <button class="checkout-btn" id="checkoutBtn">
+                Checkout <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <i class="fas fa-check-circle"></i>
+        <span id="toastMessage">Added to cart!</span>
+    </div>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
