@@ -1,4 +1,4 @@
-const API_URL = 'https://backend-rnon.onrender.com/';
+const API_URL = 'https://backend-rnon.onrender.com';
 
 // State
 let products = [];
